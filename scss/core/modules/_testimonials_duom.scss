@@ -1,0 +1,19 @@
+.testimonials_duom {
+	.testimonial_txt_holder {
+			position: relative;
+			z-index: 1;
+
+                &:before {
+                    content:"\f10d";
+                    font-weight: 900;
+                    font-family: "Font Awesome 5 Pro";
+                    position: absolute;
+                    left: 20px;
+                    top: 0;
+                    font-size: 4rem;
+                    z-index: -1;
+                    color: rgba($gray-300,.25);
+                    transition: all 0.15s ease;
+                }
+		}
+}

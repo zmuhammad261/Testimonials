@@ -1,0 +1,14 @@
+.testimonials_vertical {
+	.slick-dots {
+		right: 0;
+		width: auto;
+		bottom: unset;
+		top: 50%;
+		transform: translateY(-50%);
+
+		li {
+			display: block;
+			margin: 0.5rem 0;
+		}
+	}
+}

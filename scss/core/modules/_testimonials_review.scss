@@ -1,0 +1,42 @@
+.testimonials_review {
+	.testimonial_content {
+		.testimonial_txt_holder {
+			position: relative;
+
+			&:after {
+				content: "";
+			    border-left: 20px solid transparent;
+			    border-right: 20px solid transparent;
+			    border-top: 20px solid $primary;
+			    position: absolute;
+			    bottom: -20px;
+			    left: 30px;
+			}
+			.testimonial_txt_inner {
+				position: relative;
+				z-index: 1;
+
+                    &:before {
+                        content:"\f10e";
+                        font-weight: 900;
+                        font-family: "Font Awesome 5 Pro";
+                        position: absolute;
+                        right: 20px;
+                        top: 0;
+                        font-size: 4rem;
+                        z-index: -1;
+                        color: rgba($gray-100,.25);
+                        transition: all 0.15s ease;
+                    }
+			}
+		}
+
+		.testimonial_img_holder {
+			padding-top: 2rem;
+
+			.testimonial_img_wrap {
+				margin-left: 1.25rem;
+			}
+		}
+	}
+}

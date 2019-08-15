@@ -1,0 +1,19 @@
+.testimonials_split {
+	.testimonial_content {
+		.testimonial_content_inner {
+			.split_left {
+				position: relative;
+				&:before {
+				    content: '';
+				    position: absolute;
+				    right: 0;
+				    top: 50%;
+				    transform: translateY(-50%);
+				    border-right: 50px solid $body-bg;
+				    border-top: 50px solid transparent;
+				    border-bottom: 50px solid transparent;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+.title-holder {
+	.title-wrap {
+		overflow: hidden;
+
+		.site-title {
+		    position: relative;
+		    display: inline-block;
+
+		    &:before {
+			    content: "";
+			    position: absolute;
+			    left: calc(100% + 30px);
+			    top: 50%;
+			    width: 100%;
+			    transform: translateY(-50%);
+			    height: 2px;
+			    background: #8898aa;
+			}
+
+			&.gradient-title {
+			    background: -webkit-linear-gradient(left, $primary, $secondary);
+			    -webkit-background-clip: text;
+			    -webkit-text-fill-color: transparent;
+			}
+		}
+	}
+}

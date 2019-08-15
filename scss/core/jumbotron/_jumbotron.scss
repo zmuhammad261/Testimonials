@@ -1,0 +1,7 @@
+//
+// Jumbotron
+//
+
+.jumbotron {
+    @include border-radius($no-border-radius);
+}

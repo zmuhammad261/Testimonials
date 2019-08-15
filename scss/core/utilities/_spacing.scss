@@ -1,0 +1,79 @@
+//
+// Spacing
+//
+
+.row.row-grid > [class*="col-"] + [class*="col-"] {
+    margin-top: 3rem;
+}
+
+@include media-breakpoint-up(lg) {
+    .row.row-grid > [class*="col-lg-"] + [class*="col-lg-"] {
+        margin-top: 0;
+    }
+}
+@include media-breakpoint-up(md) {
+    .row.row-grid > [class*="col-md-"] + [class*="col-md-"] {
+        margin-top: 0;
+    }
+}
+@include media-breakpoint-up(sm) {
+    .row.row-grid > [class*="col-sm-"] + [class*="col-sm-"] {
+        margin-top: 0;
+    }
+}
+
+.row-grid + .row-grid {
+    margin-top: 3rem;
+}
+
+
+    @each $breakpoint in map-keys($grid-breakpoints) {
+      @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        @each $prop, $abbrev in (margin: m, padding: p) {
+          @each $size, $length in $lspacers {
+            .#{$abbrev}#{$infix}-#{$size} { #{$prop}: $length !important; }
+            .#{$abbrev}t#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+              #{$prop}-top: $length !important;
+            }
+            .#{$abbrev}r#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+              #{$prop}-right: $length !important;
+            }
+            .#{$abbrev}b#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+              #{$prop}-bottom: $length !important;
+            }
+            .#{$abbrev}l#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+              #{$prop}-left: $length !important;
+            }
+          }
+        }
+
+        // Large negative margins (e.g., where `.mb-n1` is negative version of `.mb-1`)
+        @each $size, $length in $lspacers {
+          @if $size != 0 {
+            .m#{$infix}-n#{$size} { margin: -$length !important; }
+            .mt#{$infix}-n#{$size},
+            .my#{$infix}-n#{$size} {
+              margin-top: -$length !important;
+            }
+            .mr#{$infix}-n#{$size},
+            .mx#{$infix}-n#{$size} {
+              margin-right: -$length !important;
+            }
+            .mb#{$infix}-n#{$size},
+            .my#{$infix}-n#{$size} {
+              margin-bottom: -$length !important;
+            }
+            .ml#{$infix}-n#{$size},
+            .mx#{$infix}-n#{$size} {
+              margin-left: -$length !important;
+            }
+          }
+        }
+    }
+}
