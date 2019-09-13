@@ -1,9 +1,10 @@
 .testimonials_vertical {
 	.slick-dots {
 		right: 0;
-		width: auto;
+		left:  unset;
 		bottom: unset;
 		top: 50%;
+		width: auto;
 		transform: translateY(-50%);
 
 		li {
